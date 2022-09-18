@@ -14,10 +14,6 @@ body {
   font-size: 14px;
 }
 
-body {
-  // display: flex;
-}
-
 .single-product {
   display: flex;
   flex-direction: column;
@@ -30,12 +26,37 @@ body {
   border-top-right-radius: 15%;
   color: $text-color;
 
-  &__image {
-    // padding: 0;
+  @media only screen and (min-width: 500px) {
+    flex-wrap: wrap;
+    border-radius: 10px;
+    height: 70vh;
+    margin-top: 10vh;
+    // padding: 30px;
+  }
+
+  &__image--mobile {
     width: 100%;
     border-top-left-radius: 5%;
     border-top-right-radius: 15%;
-    // padding: 10px;
+
+    @media only screen and (min-width: 500px) {
+      display: none;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  &__image--desktop {
+    display: none;
+
+    @media only screen and (min-width: 500px) {
+      display: block;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
   }
   &__category {
     font-size: 10px;
@@ -49,16 +70,32 @@ body {
     font-family: "Fraunces", Times, serif;
     padding-left: 1rem;
     padding-right: 2rem;
+
+    @media only screen and (min-width: 500px) {
+      margin-top: 35px;
+      width: 40%;
+    }
   }
   &__description {
     color: $pseudo-text-color;
     padding-top: 10px;
     padding-left: 1rem;
     padding-right: 1.5rem;
+    @media only screen and (min-width: 500px) {
+      margin-top: 15px;
+      // padding
+      width: 40%;
+    }
   }
 
   &__prices {
     display: flex;
+
+    @media only screen and (min-width: 500px) {
+      margin-top: 25px;
+      // padding
+      width: 40%;
+    }
   }
   &__price {
     color: hsl(158, 36%, 37%);
@@ -86,5 +123,16 @@ body {
     font-weight: bolder;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+
+    @media only screen and (min-width: 500px) {
+      margin-top: 50px;
+      // padding: 0;
+      align-self: center;
+      justify-self: center;
+      // flex-shrink: 2;
+      width: 40%;
+      // width: 40%;
+      // flex-basis: 50%;
+    }
   }
 }
